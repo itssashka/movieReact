@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import MyLogo from "./MyLogo/MyLogo";
 import NavMenu from "./NavMenu/NavMenu";
 import SearchField from "./SearchField/SearchField";

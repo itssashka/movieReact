@@ -1,11 +1,9 @@
 import React from "react";
 import MySVG from "./MySVG/MySVG";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 const FilmCard = ({ film }) => {
-    const navigate = useNavigate();
-    // console.log(film);
     return (
         <Link className="film_card" to={`/film/${film.filmId}`}>
             <div className="film_poster">

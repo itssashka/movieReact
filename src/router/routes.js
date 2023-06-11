@@ -1,4 +1,3 @@
-import React from "react"
 import TopFilms from "../Pages/TopFilms"
 import Login from "../Pages/Login"
 import Reg from "../Pages/Reg"
