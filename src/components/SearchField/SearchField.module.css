@@ -1,0 +1,36 @@
+.svg_search {
+    fill: #bfbfbf;
+    width: 20px;
+    height: 20px;
+}
+
+.search_box {
+    width: 350px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border-radius: 9px;
+    height: 35px;
+}
+
+.search_form {
+    width: 100%;
+    display: flex;
+    margin: 0 10px;
+}
+
+.form_input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #3D3D3D;
+}
+
+.search_submit {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

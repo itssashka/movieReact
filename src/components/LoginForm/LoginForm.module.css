@@ -1,0 +1,28 @@
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 25px;
+}
+
+.input{
+    color: black;
+}
+
+.reg {    
+    border-bottom: 1px dashed var(--light-green-color);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.reg p {
+    color: var(--light-green-color);
+}
+
+.error {
+    color: red;
+    width: 400px;
+    text-align: center;
+}
+

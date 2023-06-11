@@ -1,0 +1,21 @@
+.btn {
+    height: 45px;
+    background: var(--main-green-color);
+    padding: 0 15px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    user-select: none;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: var(--main-green-hover);
+    transform: scale(1.02);
+}

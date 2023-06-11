@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user_info_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.user_info_item {
+    display: flex;
+}
+
+.item_header {
+    min-width: 200px;
+    font-weight: 800;
+}

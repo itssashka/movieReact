@@ -1,0 +1,56 @@
+.nav_menu {
+    margin-left: 35px;
+    color: #bfbfbf;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.nav_menu svg {
+    fill: #bfbfbf;
+}
+
+
+.nav_menu a {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav_item {
+    transition: .1s ease-in-out;
+}
+
+.nav_item:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.nav_item:hover .svg_fire {
+    fill: #ffae00;
+}
+
+.nav_item:hover .svg_tv {
+    fill: #00f7ff;
+}
+
+.nav_item:hover .svg_cup {
+    fill: #f7e817;
+}
+
+
+.svg_fire {
+    width: 18px;
+    height: 18px;
+}
+
+.svg_tv {
+    width: 18px;
+    height: 18px;
+}
+
+.svg_cup {
+    width: 18px;
+    height: 18px;
+}
+

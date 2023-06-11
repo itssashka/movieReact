@@ -1,0 +1,12 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.logo div {
+    font-size: 36px;
+    font-weight: 800;
+}

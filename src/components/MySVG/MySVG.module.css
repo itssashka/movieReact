@@ -1,0 +1,58 @@
+.svg_logo {
+    width: 28px;
+    height: 28px;
+    fill: #127369;
+}
+
+.svg_fire {
+    width: 18px;
+    height: 18px;
+}
+
+.svg_tv {
+    width: 18px;
+    height: 18px;
+}
+
+.svg_cup {
+    width: 18px;
+    height: 18px;
+}
+
+.svg_favorite {
+    width: 30px;
+    height: 30px;
+    fill: var(--text-gray-color);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.svg_favorite:hover {
+    transform: scale(1.1);
+    fill: var(--main-green-color)
+}
+
+.svg_favorite_active {
+    width: 30px;
+    height: 30px;
+    fill: var(--main-green-color);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.svg_favorite_active:hover {
+    transform: scale(1.1);
+}
+
+.remove_btn {
+    fill: var(--text-gray-color);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.remove_btn:hover {
+    fill: var(--main-green-color);
+    transform: scale(1.1);
+}

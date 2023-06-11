@@ -1,0 +1,14 @@
+.select {
+    color: black;
+    width: 100%;
+    padding: 10px 15px;
+    outline: none;
+    border-radius: 12px;
+}
+
+.option {
+    color: black;
+    width: 100%;
+    outline: none;
+    padding: 10px 15px;
+}

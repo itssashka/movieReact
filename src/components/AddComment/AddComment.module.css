@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    border-radius: 7px;
+    padding: 7px;
+    color: #3D3D3D;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    width: 100%;
+    min-height: 100px;
+    max-height: 400px;
+    resize: vertical;
+}

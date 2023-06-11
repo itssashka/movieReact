@@ -1,0 +1,31 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    width:100%;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.comment_body {
+    font-size: 18px;
+}
+
+.user_name {
+    color: var(--main-green-color);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.user_name:hover {
+    color: var(--main-green-hover);
+}
+
+.btn_del {
+    margin-left: auto;
+}
