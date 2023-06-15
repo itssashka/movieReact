@@ -1,10 +1,45 @@
 .container {
     width: 100%;
-    gap: 20px;
+    gap: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .header {
     color: var(--light-green-color);
+}
+
+.film_card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    background-color: rgb(29, 39, 58);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.film_img img {
+    width: 120px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.film_name {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.remove_btn{
+    margin-left: auto;
+    color: var(--light-green-color);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--light-green-color);
+    user-select: none;
+}
+
+.remove_btn:hover {
+    color: white;
+    border-color: white;
 }

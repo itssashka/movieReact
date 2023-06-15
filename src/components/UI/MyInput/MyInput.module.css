@@ -10,6 +10,12 @@
     font-size: 20px;
 }
 
+@media (max-width: 420px) {
+    .input_conteiner {
+        width: 100%;
+    }
+} 
+
 .input_field_name {
     color: var(--text-gray-color);
     position: absolute;

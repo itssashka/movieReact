@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.burger {
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: 10px;
+    background: white;
+}
+
+.burger:after{
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.burger:before{
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: white;    
+    top: 0;
+}

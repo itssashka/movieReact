@@ -19,7 +19,7 @@ a:active {
 }
 
 h1{
-    font-size: 30px;
+    font-size: 24px;
 }
 
 body {
@@ -31,6 +31,7 @@ body {
     --container-size: 1120px;
     --small-container-size: 900px;
     --main-color: #161f30;
+    --main-color-hover: #1a2437;
     --text-gray-color: #bfbfbf;
     --main-green-color: #127369;
     --main-green-hover: #149178;
@@ -46,6 +47,14 @@ body {
     display: flex;
 }
 
+.align_center {
+    align-items: center;
+}
+
+.justify_center {
+    justify-content: center;
+}
+
 
 .App {
     width: 100%;
@@ -56,9 +65,10 @@ body {
 
 .login_wrapper {
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     justify-content: center;
     padding-top: 120px;
+    gap: 10px;
 }
 
 /* header */
@@ -86,7 +96,21 @@ body {
     align-items: center;
 }
 
+@media(max-width: 1120px){
+    .header_container{
+        width: 100%;
+        padding: 10px;
+    }
+}
+
 /* nav_menu */
+@media (max-width: 1120px) {
+    .header_user {
+        margin-left: auto;
+    }
+}
+
+
 
 .nav_item:hover > .svg_fire {
     fill: #ffae00;
@@ -111,9 +135,22 @@ body {
     min-height: 100vh;
 }
 
+@media(max-width: 1120px){
+    .container{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .films_container {
+        flex-direction: column-reverse;
+    }
+}
+
 .films_list {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .block_films {
@@ -121,6 +158,16 @@ body {
     flex-direction: column;
     align-items: flex-start;
     min-width: 790px;
+}
+
+@media(max-width: 1120px){
+    .block_films{
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media(max-width: 860px){
 }
 
 /* film card */
@@ -203,6 +250,68 @@ body {
     color: var(--text-gray-color);
 }
 
+@media (max-width: 860px) {
+    .films_list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .film_desc {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } 
+
+    .film_name {
+        font-size: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .film_nameEn {
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .film_card {
+        flex-direction: column;
+        width: calc(100%/3);
+        gap: 6px;
+    }
+
+    .film_poster {
+        max-height: 250px;  
+    }
+
+    .film_poster img {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .film_desc_bottom {
+        display: none;
+    }
+
+    .film_rate {
+        margin-left: 0;
+        justify-content: flex-start;
+        opacity: 0;
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .film_card {
+        flex-direction: column;
+        width: calc(100%/2);
+        gap: 6px;
+    }
+}
+
 /* filter */
 .block_filter {
     width: 100%;
@@ -210,6 +319,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 13px;
+}
+
+@media (max-width: 1120px) {
+    .block_filter {
+        margin-top: 0;
+        display: none;
+    }
 }
 
 .block_filter div {

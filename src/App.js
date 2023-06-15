@@ -5,6 +5,8 @@ import { BrowserRouter} from "react-router-dom";
 import AppRouter from "./components/AppRouter";
 import { AuthContext } from "./context";
 import User from "./utils/User";
+import Favorite from "./utils/Favorite";
+import Comments from "./utils/Comments";
 
 function App() {
     const [isAuth, setIsAuth] = useState(false);
@@ -20,7 +22,6 @@ function App() {
     }, []);
 
     useEffect(()=>{
-        console.log(isAuth);
         if(!isAuth && !isLoading){
             console.log('logout');
             const user = new User();

@@ -12,6 +12,7 @@ export default class User {
             userEmail: this.email,
             userPass: this.pass,
             userName: this.username,
+            favoriteFilms: []
         };
 
         if(localStorage.getItem('Users') === null) {

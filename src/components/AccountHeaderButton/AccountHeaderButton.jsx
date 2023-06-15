@@ -8,7 +8,6 @@ const AccountHeaderButton = () => {
 
     useEffect(()=>{
         const currentuser = User.currentUser();
-        console.log(currentuser);
         setUserName(currentuser[0])
     }, [])
 

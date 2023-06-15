@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FavoriteButton from "./UI/FavoriteButton/FavoriteButton";
+import Favorite from "../utils/Favorite";
+import User from "../utils/User";
+import { useContext } from "react";
+import { AuthContext } from "../context";
 
-const FilmHeader = ({filmInfo}) => {
+const FilmHeader = ({ filmInfo }) => {
+    const [isFavorite, setIsFavorite] = useState(false);
+    const {isAuth} = useContext(AuthContext);
+
+    useEffect(() => {
+        const favorite = new Favorite();
+        if (User.isLogin()) {
+            const isFilmFavorite = favorite.isFavorite(filmInfo.kinopoiskId);
+            setIsFavorite(isFilmFavorite);
+        }
+    }, [filmInfo]);
+
+    const changeFavorite = (e) => {
+        e.stopPropagation();
+        const favorite = new Favorite();
+
+        if (!isFavorite) {
+            favorite.addToFavorite(
+                filmInfo.kinopoiskId,
+                filmInfo.nameRu,
+                filmInfo.posterUrl
+            );
+        } else {
+            favorite.removeFromFavorite(filmInfo.kinopoiskId);
+        }
+        setIsFavorite(!isFavorite);
+    };
+
     return (
         <div className="film_header flex_row">
             <div className="film_header-poster">
@@ -28,14 +59,18 @@ const FilmHeader = ({filmInfo}) => {
                     </div>
                     <div className="about-item flex_row">
                         <p>Жанры:</p>{" "}
-                        <div>{filmInfo?.genres?.map((genre) => genre.genre + " ")}</div>
+                        <div>
+                            {filmInfo?.genres?.map(
+                                (genre) => genre.genre + " "
+                            )}
+                        </div>
                     </div>
                     <div className="about-item flex_row">
-                        <p>Рейтинг IMDB:</p> 
+                        <p>Рейтинг IMDB:</p>
                         <div>{filmInfo.ratingImdb}</div>
                     </div>
                     <div className="about-item flex_row">
-                        <p>Рейтинг критиков:</p> 
+                        <p>Рейтинг критиков:</p>
                         <div>{filmInfo.ratingFilmCritics}</div>
                     </div>
                 </div>
@@ -43,7 +78,11 @@ const FilmHeader = ({filmInfo}) => {
             <div className="film_header-score">
                 <div className="rating">{filmInfo.ratingKinopoisk}</div>
                 <div>{filmInfo.ratingKinopoiskVoteCount}</div>
-                <FavoriteButton isFavorite={true}/>
+                {isAuth && <FavoriteButton
+                    isFavorite={isFavorite}
+                    changeFavorite={changeFavorite}
+                    id={filmInfo.kinopoiskId}
+                />}
             </div>
         </div>
     );

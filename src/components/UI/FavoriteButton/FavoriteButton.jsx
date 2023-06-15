@@ -1,12 +1,19 @@
-import React from 'react'
-import MySVG from '../../MySVG/MySVG'
+import React from "react";
+import MySVG from "../../MySVG/MySVG";
+import Favorite from "../../../utils/Favorite";
 
-const FavoriteButton = ({isFavorite}) => {
-  return (
-    <div>
-        {isFavorite ? <MySVG name="favoriteSVG_active"/>:<MySVG name="favoriteSVG"/>}
-    </div>
-  )
-}
+const FavoriteButton = ({ isFavorite, changeFavorite}) => {
 
-export default FavoriteButton
+    return (
+        <div>
+            {isFavorite ? (
+                <div onClick={changeFavorite}><MySVG name="favoriteSVG_active" /></div>
+                
+            ) : (
+                <div onClick={changeFavorite}><MySVG name="favoriteSVG" /></div>
+            )}
+        </div>
+    );
+};
+
+export default FavoriteButton;

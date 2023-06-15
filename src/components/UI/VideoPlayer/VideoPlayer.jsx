@@ -2,9 +2,6 @@ import React from "react";
 import st from './VideoPlayer.module.css'
 
 const VideoPlayer = ({ trailers }) => {
-    const regEx = /v=(.*)/;
-    const aaa = trailers.items[0].url.match(regEx);
-    console.log(aaa);
     return (
         <div className={st.wrapper}>
             {trailers && (
@@ -14,7 +11,7 @@ const VideoPlayer = ({ trailers }) => {
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allowFullScreen
                 ></iframe>
             )}
         </div>

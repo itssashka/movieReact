@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MySVG from "./MySVG/MySVG";
-import { Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import Favorite from "../utils/Favorite";
+import FavoriteButton from "./UI/FavoriteButton/FavoriteButton";
+import User from "../utils/User";
+import { useContext } from "react";
+import { AuthContext } from "../context";
 
 const FilmCard = ({ film }) => {
+    const [isFavorite, setIsFavorite] = useState(false);
+    const {isAuth} = useContext(AuthContext);
+
+    useEffect(() => {
+        const favorite = new Favorite();
+
+        if (User.isLogin()) {
+            const isFilmFavorite = favorite.isFavorite(film.filmId);
+            setIsFavorite(isFilmFavorite);
+        }
+    }, []);
+
+    const changeFavorite = (e) => {
+        e.preventDefault();
+        const favorite = new Favorite();
+        if (!isFavorite) {
+            favorite.addToFavorite(
+                film.filmId,
+                film.nameRu,
+                film.posterUrlPreview
+            );
+        } else {
+            favorite.removeFromFavorite(film.filmId);
+        }
+        setIsFavorite(!isFavorite);
+    };
+
     return (
         <Link className="film_card" to={`/film/${film.filmId}`}>
             <div className="film_poster">
@@ -33,7 +64,11 @@ const FilmCard = ({ film }) => {
             <div className="film_rate">
                 <div className="rating">{film.rating}</div>
                 <div className="rating_votes">{film.ratingVoteCount}</div>
-                <MySVG name="favoriteSVG"/>
+                {isAuth && <FavoriteButton
+                    isFavorite={isFavorite}
+                    changeFavorite={changeFavorite}
+                    id={film.filmId}
+                />}
             </div>
         </Link>
     );

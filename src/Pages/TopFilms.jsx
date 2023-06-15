@@ -31,10 +31,9 @@ const TopFilms = () => {
     })
 
     return (
-        <div className="container">
+        <div className="container films_container">
             <div className="block_films">
-                <h1>Топ 250</h1>
-                
+                <h1>Топ 250</h1>                
                 <div>{showingFilmsCount} фильмов из 250</div>
                 <FilmsList films={films}/>
                 {isLoading && (<div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: '30px'}}><Loader3/></div>)}
