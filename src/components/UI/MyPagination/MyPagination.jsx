@@ -69,7 +69,7 @@ const MyPagination = ({
                 pagesArr.push(i);
             }
         } else {
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= totalPages; i++) {
                 pagesArr.push(i);
             }
         }

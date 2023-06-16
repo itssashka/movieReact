@@ -47,6 +47,7 @@ const CommentBlock = ({ filmId }) => {
         }
         setComments(newComments.reverse());
         setIsLoading(false);
+        changePage(1)
     };
 
     const removeComment = (commentId, userEmail) => {
