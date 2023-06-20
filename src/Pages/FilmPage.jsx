@@ -32,8 +32,8 @@ const FilmPage = () => {
     const [fetchTrailer, isTrailerLoading, trError] = useFetch(
         async (filmId) => {
             const data = await FilmService.getFilmTrailer(filmId);
+            console.log(data);
             setFilmTrailers(data);
-            console.log();
         }
     )
 
@@ -48,7 +48,7 @@ const FilmPage = () => {
         <div className="film_container flex_column">
             {isLoading && (<div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: '30px'}}><Loader3/></div>)}
             <FilmHeader filmInfo={filmInfo} budget={budget}/>
-            {filmTrailers && <YoutubeBtn url={filmTrailers.items[0].url}>Смотреть трейлер</YoutubeBtn>}
+            {filmTrailers?.items.length > 0 &&  <YoutubeBtn url={filmTrailers.items[0].url}>Смотреть трейлер</YoutubeBtn>}
             <KinopoiskButton url={filmInfo.webUrl}/>
             <div className="comments_header" style={{marginTop: '20px'}}>Комментарии</div>
             <CommentBlock filmId={id}/>
